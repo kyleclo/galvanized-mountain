@@ -3,36 +3,243 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Study Landing Page</title>
-  <meta name="description" content="Landing page for an online advertising study." />
+  <title>The Galvanized Mountain — Official Bulletin</title>
+  <meta name="description" content="An official bulletin from The Galvanized Mountain (satirical/fictional). Incident reports, hazards, and notices." />
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: 720px; margin: 60px auto; padding: 0 16px; line-height: 1.5; }
-    .card { border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px; }
-    h1 { margin-top: 0; font-size: 28px; }
-    a.button { display: inline-block; padding: 10px 14px; border-radius: 10px; border: 1px solid #111827; text-decoration: none; }
-    footer { margin-top: 18px; font-size: 14px; color: #6b7280; }
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1620;
+      --ink:#e7eef8;
+      --muted:#a7b4c6;
+      --line:#223044;
+      --accent:#9ae6b4;
+      --warn:#fbd38d;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      background: radial-gradient(1200px 700px at 20% 0%, #142033 0%, var(--bg) 55%) fixed;
+      color:var(--ink);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:960px; margin:0 auto; padding:24px 16px 56px}
+    header{
+      border-bottom:1px solid var(--line);
+      padding:34px 0 22px;
+      margin-bottom:18px;
+    }
+    .kicker{
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:12px;
+      color:var(--muted);
+      margin:0 0 10px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:44px;
+      line-height:1.1;
+      letter-spacing:.01em;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      max-width:70ch;
+      font-size:16px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .pillbar{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:14px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(15,22,32,.6);
+      padding:6px 10px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:18px;
+    }
+    @media (min-width: 900px){
+      .grid{ grid-template-columns: 1.1fr .9fr; }
+    }
+    .card{
+      background: rgba(15,22,32,.72);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+    }
+    h2{
+      margin:0 0 10px;
+      font-size:20px;
+      letter-spacing:.02em;
+    }
+    .note{
+      border-left:3px solid var(--warn);
+      padding:10px 12px;
+      background: rgba(251, 211, 141, .08);
+      border-radius:10px;
+      color:var(--ink);
+      margin:12px 0 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:14px;
+    }
+    pre{
+      margin:0;
+      white-space:pre-wrap;
+      word-break:break-word;
+      background: rgba(0,0,0,.25);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:14px;
+      color:var(--ink);
+      font-size:14px;
+      overflow:auto;
+    }
+    ul{margin:10px 0 0 18px}
+    li{margin:6px 0}
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{
+      display:inline-block;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(15,22,32,.6);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:14px;
+    }
+    .btn.primary{
+      border-color: rgba(154, 230, 180, .45);
+      background: rgba(154, 230, 180, .12);
+    }
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      padding-top:16px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:13px;
+    }
+    .small{font-size:12px; color:var(--muted)}
+    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Study Landing Page</h1>
-    <p>
-      This page is part of a research-style test of online advertising delivery and placement.
-    </p>
-    <p>
-      No personal information is required to view this page.
-    </p>
+  <div class="wrap">
+    <header>
+      <p class="kicker">Official Bulletin · The Galvanized Mountain Authority</p>
+      <h1>Citizens!</h1>
+      <p class="sub">
+        This page is part of a <strong>fictional / satirical</strong> project used to test online ad delivery and placement.
+        It is intentionally stylized. No personal information is required to read this page.
+      </p>
+      <div class="pillbar" aria-label="Key facts">
+        <span class="pill">Status: Active Notice</span>
+        <span class="pill">Category: Fiction / Satire</span>
+        <span class="pill">Destination: <code>/galvanized-mountain/</code></span>
+      </div>
+    </header>
 
-    <p>
-      <a class="button" href="https://example.com" target="_blank" rel="noreferrer">
-        Learn more
-      </a>
-    </p>
+    <div class="grid">
+      <section class="card">
+        <h2>Proclamation (Public Copy)</h2>
+        <pre>Citizens!
+
+Albert has fallen! As in down a cliff. Onto a metal barge. Which was
+on fire. And surrounded by sharks. In an acid lake. That were
+genetically mutated to be able to fly. Specifically in poison gas.
+Which surrounds the boats. Which are actually made of old but sharp
+daggers. That are pointed up at the cliff. Which has a thousand
+carnivorous giraffes. Armed with krises.
+
+Obviously and clearly,
+The Galvanized Mountain</pre>
+
+        <div class="note">
+          <strong>Plain-English note:</strong> The text above is fictional. It exists to test how ads with unusual creative
+          are reviewed, delivered, and reported in placement logs.
+        </div>
+
+        <div class="btnrow">
+          <a class="btn primary" href="#incident">Read the incident report</a>
+          <a class="btn" href="#hazards">Review hazard registry</a>
+          <a class="btn" href="privacy.html">Privacy Policy</a>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Field Summary</h2>
+        <p class="small">
+          Use this page as your Google Ads destination URL. If you’re running an experiment, append
+          <code>?utm_source=google&utm_medium=display&utm_campaign=test</code> (or similar) to track traffic sources.
+        </p>
+
+        <h2 style="margin-top:14px;">What this site is</h2>
+        <ul>
+          <li>A single landing page suitable for ad review</li>
+          <li>Consistent tone between ad creative and destination</li>
+          <li>Minimal data collection (optional analytics only)</li>
+        </ul>
+
+        <h2 style="margin-top:14px;">What this site is not</h2>
+        <ul>
+          <li>Not real news</li>
+          <li>Not emergency guidance</li>
+          <li>Not asking for personal data</li>
+        </ul>
+      </aside>
+    </div>
+
+    <section id="incident" class="card" style="margin-top:14px;">
+      <h2>Incident Report: ALBERT / FALL EVENT</h2>
+      <p><strong>Classification:</strong> Spectacularly Preventable</p>
+      <p><strong>Summary:</strong> Albert traveled cliff-adjacent during a period of heightened dagger-boat presence, resulting in an
+        uncontrolled descent and subsequent contact with a burning barge amid airborne-shark activity.</p>
+      <p><strong>Current status:</strong> The Mountain continues to galvanize.</p>
+    </section>
+
+    <section id="hazards" class="card" style="margin-top:14px;">
+      <h2>Hazard Registry (Unofficial)</h2>
+      <ul>
+        <li><strong>Acid Lake:</strong> Highly corrosive. Avoid splashing, swimming, or existential reflection near the shoreline.</li>
+        <li><strong>Flying Sharks:</strong> Unexpected altitude gains. Do not engage in debates; they will not listen.</li>
+        <li><strong>Dagger Boats:</strong> Upward-pointing sharpness. Step carefully, especially while falling.</li>
+        <li><strong>Carnivorous Giraffes (armed):</strong> Maintain distance. Do not offer snacks; they interpret snacks as treaties.</li>
+        <li><strong>Poison Gas:</strong> Persistent. If you can read this, you are either indoors or fictional.</li>
+      </ul>
+      <p class="small">
+        Reminder: this registry is part of the satire. For real-world safety, consult actual local authorities and conditions.
+      </p>
+    </section>
+
+    <section class="card" style="margin-top:14px;">
+      <h2>Contact</h2>
+      <p class="small">
+        For study-related questions, provide an email address here (recommended for ad review legitimacy):
+      </p>
+      <p><strong>Email:</strong> kyleclo@cs.washington.edu</p>
+    </section>
 
     <footer>
-      <a href="/privacy.html">Privacy Policy</a>
+      <div>
+        <span>© <script>document.write(new Date().getFullYear());</script> The Galvanized Mountain Authority</span>
+        &nbsp;·&nbsp;<a href="privacy.html">Privacy Policy</a>
+      </div>
+      <div class="small" style="margin-top:8px;">
+        If you use Google Ads / Analytics tags on this site, ensure your disclosures in <a href="privacy.html">Privacy Policy</a> match what you enable.
+      </div>
     </footer>
   </div>
 </body>
 </html>
-
